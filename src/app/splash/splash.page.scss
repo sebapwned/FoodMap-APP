@@ -1,0 +1,30 @@
+.splash-screen {
+    background-color: #79C3AC;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo-container {
+    background-color: #79C3AC;
+    width: 50%;
+    max-width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px; //bordes curvos
+    border: 2px solid black;
+    overflow: hidden; /* Asegura que la imagen respete los bordes curvos */
+    box-sizing: border-box; /* Incluye el borde en el cálculo del ancho del contenedor */
+}
+
+.logo-container img {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
+    border-radius: 18px; /* Bordes curvos para la imagen, ajustados para respetar el borde del contenedor */
+}
