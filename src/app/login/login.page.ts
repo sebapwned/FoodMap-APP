@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SessionManager } from 'src/managers/SessionManager';
+import { SessionManager } from 'src/app/managers/SessionManager';
 
 @Component({
   selector: 'app-login',
