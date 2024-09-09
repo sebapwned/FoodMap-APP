@@ -8,8 +8,22 @@
     position: relative;
 }
 
+.img-background {
+    width: 95vw;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    position: relative; //para que el logo se posicione relativo a este contenedor
+}
+
+.img.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; //mantener relacion aspecto
+}
+
 .logo-container {
-    background-color: #79C3AC;
+    position: absolute;
     width: 50%;
     max-width: 50%;
     height: auto;
@@ -20,6 +34,7 @@
     border: 2px solid black;
     overflow: hidden; /* Asegura que la imagen respete los bordes curvos */
     box-sizing: border-box; /* Incluye el borde en el cálculo del ancho del contenedor */
+    top: 22%;
 }
 
 .logo-container img {
@@ -27,4 +42,21 @@
     max-height: 50vh;
     object-fit: contain;
     border-radius: 18px; /* Bordes curvos para la imagen, ajustados para respetar el borde del contenedor */
+}
+
+
+.swipe-up-button {
+    position: absolute;
+    bottom: 10%; // ajusta la posicion vertical del boton
+    left: 50%;
+    transform: translateX(-50%); /* Centra el botón horizontalmente */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10; /* Asegura que el botón esté encima de otros elementos */
+}
+
+.swipe-up-button img {
+    width: auto;
+    height: 50px; /* Ajusta el tamaño del ícono según sea necesario */
 }

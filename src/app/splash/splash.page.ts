@@ -10,10 +10,13 @@ export class SplashPage implements OnInit {
 
   constructor(private router: Router) { }
 
+  goToLogin() {
+    this.router.navigate(['/login']) //Funcion para navegar a login
+  }
   ngOnInit() {
-    setTimeout(() => {
+ /*   setTimeout(() => {
       this.router.navigate(['/inicio']);  
-    }, 3000)
+    }, 3000)*/
   }
 }
-
+ 
