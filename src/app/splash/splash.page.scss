@@ -32,8 +32,8 @@
     align-items: center;
     border-radius: 20px; //bordes curvos
     border: 2px solid black;
-    overflow: hidden; /* Asegura que la imagen respete los bordes curvos */
-    box-sizing: border-box; /* Incluye el borde en el cálculo del ancho del contenedor */
+    overflow: hidden; // asegura que la imagen respete los bordes curvos 
+    box-sizing: border-box; // incluye el borde en el cálculo del ancho del contenedor 
     top: 22%;
 }
 
@@ -41,7 +41,7 @@
     width: 100%;
     max-height: 50vh;
     object-fit: contain;
-    border-radius: 18px; /* Bordes curvos para la imagen, ajustados para respetar el borde del contenedor */
+    border-radius: 18px; // bordes curvos para la imagen, ajustados para respetar el borde del contenedor 
 }
 
 
@@ -49,14 +49,14 @@
     position: absolute;
     bottom: 10%; // ajusta la posicion vertical del boton
     left: 50%;
-    transform: translateX(-50%); /* Centra el botón horizontalmente */
+    transform: translateX(-50%); // centra el botón horizontalmente 
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 10; /* Asegura que el botón esté encima de otros elementos */
+    z-index: 10; // asegura que el botón esté encima de otros elementos //
 }
 
 .swipe-up-button img {
     width: auto;
-    height: 50px; /* Ajusta el tamaño del ícono según sea necesario */
+    height: 50px; // ajusta el tamaño del ícono según sea necesario 
 }
