@@ -11,17 +11,17 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router, private sessionManager: SessionManager) { }
 
-    user: string = '';
+    email: string = '';
     password: string = '';
 
   ngOnInit() {
   }
 
   onLoginButtonPressed() {
-    if(this.sessionManager.performLogin(this.user, this.password)) {
+    if(this.sessionManager.performLogin(this.email, this.password)) {
       this.router.navigate(['/home'])
     } else {
-      this.user=''
+      this.email=''
       this.password=''
       alert('Las credenciales ingresadas son inválidas.')
     }
