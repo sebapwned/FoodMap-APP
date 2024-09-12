@@ -2,7 +2,7 @@
   <div class="background-image"></div>
 
   <ion-button class="back-button" (click)="goBack()">
-    <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+    <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>Back
   </ion-button>
 
   <div class="header-container">
@@ -35,6 +35,6 @@
       <ion-input type="password"></ion-input>
     </ion-item>
 
-    <ion-button expand="block" class="register-button">Regístrate</ion-button>
+    <ion-button expand="block" (click)="onUserButtonPressed()" class="register-button">Regístrate</ion-button>
   </div>
 </ion-content>

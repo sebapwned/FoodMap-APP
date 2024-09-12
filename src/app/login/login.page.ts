@@ -24,16 +24,25 @@ export class LoginPage implements OnInit {
       // Mostrar el mensaje de éxito usando Toast
       const toast = await this.toastController.create({
         message: '¡Ingreso Exitoso!',
-        duration: 2000,  // Duración de 2 segundos
+        duration: 1000,  // Duración de 2 segundos
         color: 'success',  // Color de éxito (verde)
         position: 'top'    // Posición en la parte superior
       });
       toast.present();
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/inicio'], { queryParams: { user: this.email } });
     } else {
-      this.email=''
-      this.password=''
-      alert('Las credenciales ingresadas son inválidas.')
+
+      // Mostrar el mensaje de error usando Toast
+      const errorToast = await this.toastController.create({
+        message: 'Las credenciales ingresadas son inválidas.',
+        duration: 2000,  
+        color: 'danger',  
+        position: 'top'   
+      });
+      errorToast.present();
+      
+      this.email = '';
+      this.password = '';
     }
   }
 
