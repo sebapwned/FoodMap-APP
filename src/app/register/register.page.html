@@ -1,13 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Register</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="register-page">
+  <div class="background-image"></div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-button class="back-button" (click)="goBack()">
+    <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+  </ion-button>
+
+  <div class="header-container">
+    <img src="assets/images-register/logo_definitivo.jpg" alt="FoodMap Logo" class="logo" />
+    <div>
+      <h1 class="main-title">¡Únete a FoodMap!</h1>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <h2>Registro de Usuario</h2>
+
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Re-Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="register-button">Regístrate</ion-button>
+  </div>
 </ion-content>

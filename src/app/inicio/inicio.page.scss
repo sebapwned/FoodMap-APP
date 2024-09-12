@@ -1,0 +1,103 @@
+ion-menu {
+    color: #000000;
+  
+    ion-title {
+      color: #000000;
+    }
+  }
+  
+  ion-header {
+    ion-toolbar {
+      --background: #79C3AC !important;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      position: relative;
+    }
+  
+    ion-buttons {
+      display: flex;
+      align-items: center;
+      position: absolute;
+    }
+  
+    ion-buttons[slot="start"] {
+      left: 0;
+    }
+  
+    ion-buttons[slot="end"] {
+      right: 0;
+    }
+  
+    ion-toolbar img {
+      height: 40px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  
+  ion-content {
+    --background: #d2ffec;
+    padding: 0 16px;
+  }
+  
+  ion-button {
+    --color: #000000;
+    --ion-color-dark: #000000;
+    font-size: 16px;
+  }
+  
+  ion-item {
+    margin-top: 10px;
+    --background: #D0BCFF;
+    border-radius: 20px;
+  }
+  
+  ion-label {
+    color: #000000;
+  }
+  
+  ion-input {
+    --placeholder-color: #000000;
+    font-size: 16px;
+    padding-left: 8px;
+  }
+  
+  ion-icon {
+    color: #000000;
+  }
+  
+  ion-list {
+    background-color: #d2ffec;
+  }
+  
+  ion-card {
+    background-color: #65398C;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  ion-card img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+  }
+  
+  ion-footer {
+    background: #79C3AC;
+  }
+  
+  ion-tab-bar {
+    --background: transparent;
+  }
+  
+  ion-tab-button {
+    --color-selected: #ff1a1a;
+    --color: #000000;
+  }
+  
+  ion-tab-button[tab="inicio"] ion-icon {
+    color: #ff1a1a;
+  }
