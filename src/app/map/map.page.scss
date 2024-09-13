@@ -47,12 +47,16 @@ ion-menu {
     font-size: 16px;
   }
   
+ .ubi-input {
+    margin-top: 35%;
+  }
+  
   ion-item {
     margin-top: 10px;
     --background: #D0BCFF;
     border-radius: 20px;
   }
-  
+
   ion-label {
     color: #000000;
   }
@@ -72,6 +76,7 @@ ion-menu {
   }
   
   ion-card {
+    top: 5%;
     background-color: #65398C;
     border-radius: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -81,7 +86,7 @@ ion-menu {
   ion-card img {
     display: block;
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     height: auto;
   }
   
@@ -94,10 +99,19 @@ ion-menu {
   }
   
   ion-tab-button {
-    --color-selected: #65398C;
+    --color-selected: #000000;
     --color: #000000;
   }
   
   ion-tab-button[tab="inicio"] ion-icon {
+    color: #000000;
+  }
+
+  ion-tab-button[tab="mapa"] ion-icon {
     color: #65398C;
+  }
+
+  .texto-mantenimiento p{
+    text-align: center;
+    color: #d2ffec;
   }

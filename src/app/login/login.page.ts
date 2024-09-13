@@ -24,9 +24,9 @@ export class LoginPage implements OnInit {
       // Mostrar el mensaje de éxito usando Toast
       const toast = await this.toastController.create({
         message: '¡Ingreso Exitoso!',
-        duration: 1000,  // Duración de 2 segundos
-        color: 'success',  // Color de éxito (verde)
-        position: 'top'    // Posición en la parte superior
+        duration: 1000,  
+        color: 'success',  
+        position: 'top'    
       });
       toast.present();
       this.router.navigate(['/inicio'], { queryParams: { user: this.email } });

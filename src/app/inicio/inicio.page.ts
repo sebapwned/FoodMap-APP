@@ -40,4 +40,7 @@ export class InicioPage implements OnInit {
   onUserButtonPressed() {
     this.router.navigate(['/login'])
   }
+  onMapButtonPressed() {
+    this.router.navigate(['/map'])
+  }
 }

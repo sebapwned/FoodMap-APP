@@ -14,7 +14,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <img src="assets/images-inicio/logo_definitivo.jpg" alt="Logo"/>
+    <img src="assets/images-map/logo_definitivo.jpg" alt="Logo"/>
     <ion-buttons slot="end">
     </ion-buttons>
   </ion-toolbar>
@@ -25,33 +25,28 @@
     <ion-icon name="arrow-back-outline"></ion-icon> Back
   </ion-button>
 
-  <ion-item>
-    <ion-input type="text" placeholder="Promociones cerca de tu ubicación"></ion-input>
+  <ion-item class="ubi-input">
+    <ion-input type="text" placeholder="Busca una ubicación"></ion-input>
     <ion-icon slot="end" name="location-outline"></ion-icon>
   </ion-item>
 
-  <ion-list>
-    <ion-card>
-      <img src="assets/images-inicio/promo 1 1.png" alt="Super Combo"/>
+  
+    <ion-card class="mapa-referencial">
+      <img src="assets/images-map/img_mapa_referencial.png" alt="mapa referencial"/>
     </ion-card>
 
-    <ion-card>
-      <img src="assets/images-inicio/promo 2 1.png" alt="Happy Hour"/>
+    <ion-card class="texto-mantenimiento"><p>VISTA EN CONSTRUCCIÓN</p>
     </ion-card>
 
-    <ion-card>
-      <img src="assets/images-inicio/promo 3 1.png" alt="Promoción Lunes Alitas"/>
-    </ion-card>
-  </ion-list>
 </ion-content>
 
 <ion-footer>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="mapa" (click)="onMapButtonPressed()">
+    <ion-tab-button tab="mapa" href="/map">
       <ion-icon name="map-outline"></ion-icon>
     </ion-tab-button>
 
-    <ion-tab-button tab="inicio" href="/inicio">
+    <ion-tab-button tab="inicio" (click)="onHomeButtonPressed()">
       <ion-icon name="home-outline"></ion-icon>
     </ion-tab-button>
 
