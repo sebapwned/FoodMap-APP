@@ -1,64 +1,72 @@
-ion-content {
-  --background: transparent;
-  background-image: url('/assets/images-login/imagen_login.jpg');
-  background-size: cover; // hace que la imagen cubra todo el contenido 
-  background-position: center; // centra la imagen
-  height: 100%; // asegura que el contenedor tenga la altura total 
-
-  // Aplica un color semitransparente sobre la imagen para simular opacidad:
-  background-color: rgba(0, 0, 0, 0.4); // color negro con 40% de opacidad 
-  background-blend-mode: multiply; // mezcla el color con la imagen de fondo 
+.login-background {
+  background: linear-gradient(to bottom, #f27874, #e09f8f); 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.logo-container{
-  text-align: center;
-  margin-top: 15%;
-}
-
-.logo-container img{
-  width: 40vw;
+.logo-container img {
+  width: 65vw;  
   height: auto;
-  border-radius: 20px;
-  border: 1px solid black;
+  margin-bottom: 5vh; 
+}
+ion-item {
+  --background: #e5a5a2; 
+  --border-color: transparent;
+  border-radius: 5px;
+  margin: 10px 0;
+  width: 80vw;
+  height: 10vh;
+  max-width: 350px;
+
+  ion-label {
+    color: white; 
+    font-weight: bold;
+  }
+
+  ion-input {
+    color: white;
+  }
+}
+ion-content .forgot-password{
+  color: white;
+  margin-bottom: 10%;
+  text-align: center;
 }
 
 .login-card {
-  background: rgba(76, 193, 157, 0.7); // fondo verde semitransparente
-  border-radius: 20px;
-  margin: 40px;
-}
 
-.login-card ion-item {
-  --background: rgba(76, 193, 157, 0.01); // mismo color que el fondo de la tarjeta con mucha mas transperencia para que no se vea sobrepuesto
-}
-
-
-.login-card ion-card-title {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #f0f0f0;
-  -webkit-text-stroke: 1px black; //borde negro a las letras
-}
-
-// Estilo para los labels dentro de ion-item 
-.login-card ion-label {
-  color: #f0f0f0; 
+  padding: 20px;
+  width: 85%;
+  max-width: 400px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-color: transparent;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 35vh;
 }
 
 .login-button, .google-login-button {
-  border-radius: 50%; // asegura que los botones sean circulares 
-  display: flex; // Usa flexbox para centrar el contenido 
-  align-items: center; // alinea verticalmente el contenido 
-  justify-content: center; // alinea horizontalmente el contenido 
-  font-size: 13px; // ajusta el tamaño de la fuente 
-  font-weight: bold; // texto de los botones en negrita
-  text-align: center; // alinea el texto al centro 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 13px; 
+  font-weight: bold; 
+  text-align: center; 
+  border: 1px solid black;
+  border-radius: 16px; /* Bordes circulares */
 }
 
 .login-button {
-  --background: #f0f0f0ef;
+  --background: #F85430;
   margin-top: 20px;
-  color: #000000;
+  color: #ffffff;
 }
 
 .google-login-button {
@@ -78,6 +86,6 @@ ion-content {
 }
 
 .signup-container a {
-  color: rgba(76, 193, 157);
+  color: rgb(0, 0, 0);
 }
 

@@ -14,9 +14,9 @@ export class SplashPage implements OnInit {
     this.router.navigate(['/login']) //Funcion para navegar a login
   }
   ngOnInit() {
- /*   setTimeout(() => {
-      this.router.navigate(['/inicio']);  
-    }, 3000)*/
+    setTimeout(() => {
+      this.router.navigate(['/login']);  
+    }, 5000)
   }
 }
  
