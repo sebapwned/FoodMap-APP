@@ -1,0 +1,69 @@
+<ion-content [fullscreen]="true" class="profile-content"  >
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <div class="profile-background">
+
+     <ion-button class="back-button" (click)="goBack()">
+      <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+
+    <div class="header-container">
+      <h1 class="main-title">Perfil</h1>
+    </div>
+
+  <div class="form-container">
+    <h4>E-mail</h4>
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+
+    <h4>Password</h4>
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <h4>Re-Password</h4>
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <h4>Nombre</h4>
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <h4>Apellido</h4>
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <h4>Dirección</h4>
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="text" ></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="onProfileButtonPressed()" class="register-button">Guardar</ion-button>
+
+  </div>
+</div>
+<ion-footer class="footer">
+  <ion-tab-bar slot="bottom" class="footer-tab-bar">
+    <ion-tab-button tab="mapa" (click)="onMapButtonPressed()">
+      <ion-icon name="map-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="inicio" (click)="onHomeButtonPressed()">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="perfil" href="#">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
+</ion-content>

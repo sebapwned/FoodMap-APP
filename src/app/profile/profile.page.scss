@@ -1,0 +1,109 @@
+.profile-background {
+  background: linear-gradient(to bottom, #f27874, #e09f8f); 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 70px; /* Espacio para el footer */
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  --background: transparent;
+  color: black;
+}
+
+.main-title {
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+.form-container h4{
+  text-align: left;
+  width: 100%; 
+  max-width: 350px; 
+  margin: 10px 0 0 0; 
+}
+
+.form-container {
+  background: transparent;
+  padding: 10px;
+  border-radius: 20px;
+  width: 80%;
+  height: auto;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+ion-item {
+  --background: #e5a5a2; 
+  border-radius: 5px;
+  margin: 1px 0 1px 0;
+  width: 80vw;
+  height: 10vh;
+  max-width: 350px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+
+  ion-label {
+    color: white; 
+    font-weight: bold;
+    
+  }
+
+  ion-input {
+    color: white;
+  }
+}
+
+.register-button {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 13px; 
+  text-align: center; 
+  border: 1px solid black;
+  border-radius: 16px; 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  width: 80vw;
+  margin: 1px 0;
+}
+
+.register-button {
+  --background: #F85430;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.footer-tab-bar {
+  --background: #E26D5D; 
+  --color-selected: #ffffff; /* Color del icono cuando está seleccionado */
+  --color: #000000; /* Color de los iconos cuando no están seleccionados */
+}
+
+* {
+  font-family: 'Fredoka One', sans-serif;
+}

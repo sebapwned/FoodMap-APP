@@ -7,6 +7,16 @@
   flex-direction: column;
 }
 
+* {
+  font-family: 'Fredoka One', sans-serif;
+}
+
+.login-background h1{
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
 .logo-container img {
   width: 65vw;  
   height: auto;
@@ -14,16 +24,18 @@
 }
 ion-item {
   --background: #e5a5a2; 
-  --border-color: transparent;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 10px 0; /* espacio entre label y label */
   width: 80vw;
   height: 10vh;
   max-width: 350px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 
   ion-label {
     color: white; 
-    font-weight: bold;
+    font-family: 'Fredoka One', sans-serif;
+
+    
   }
 
   ion-input {
@@ -37,11 +49,10 @@ ion-content .forgot-password{
 }
 
 .login-card {
-
   padding: 20px;
   width: 85%;
   max-width: 400px;
-  margin-top: 10px;
+  margin-top: 3px;
   margin-bottom: 5px;
   background-color: transparent;
   box-shadow: none;
@@ -57,10 +68,10 @@ ion-content .forgot-password{
   align-items: center; 
   justify-content: center; 
   font-size: 13px; 
-  font-weight: bold; 
   text-align: center; 
   border: 1px solid black;
-  border-radius: 16px; /* Bordes circulares */
+  border-radius: 16px; 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .login-button {

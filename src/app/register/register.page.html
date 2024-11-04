@@ -1,24 +1,19 @@
-<ion-content class="register-page">
-  <div class="background-image"></div>
+<ion-content [fullscreen]="true" class="register-content"  >
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <div class="register-background">
 
-  <ion-button class="back-button" (click)="goBack()">
-    <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>Back
-  </ion-button>
+     <ion-button class="back-button" (click)="goBack()">
+      <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+    </ion-button>
 
-  <div class="header-container">
-    <img src="assets/images-register/logo_definitivo.jpg" alt="FoodMap Logo" class="logo" />
-    <div>
-      <h1 class="main-title">¡Únete a FoodMap!</h1>
+    <div class="header-container">
+      <h1 class="main-title">
+        <span>Regístrate en</span><br>
+        <span class="highlight">Food Map</span>
+      </h1>
     </div>
-  </div>
 
   <div class="form-container">
-    <h2>Registro de Usuario</h2>
-
-    <ion-item>
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
 
     <ion-item>
       <ion-label position="floating">E-mail</ion-label>
@@ -35,6 +30,27 @@
       <ion-input type="password"></ion-input>
     </ion-item>
 
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input type="text" ></ion-input>
+    </ion-item>
+
     <ion-button expand="block" (click)="onUserButtonPressed()" class="register-button">Regístrate</ion-button>
+
+    <ion-button fill="outline" class="google-login-button" href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=Ab5oB3poXFswRbD-IMLvnGCr_QAXuu-KN4c4Ka9coEFK_UyYppJIutRmYZ6RORl8OlZWjAWipletEQ&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-2111964797%3A1726202516783331&ddm=0">
+      <ion-icon slot="start" name="logo-google"></ion-icon>
+      Continuar con Google
+    </ion-button>
   </div>
+</div>
 </ion-content>

@@ -24,7 +24,7 @@ export class InicioPage implements OnInit {
   }
 
   goBack() {
-    this.navCtrl.navigateBack('/login');
+    this.navCtrl.back();
   }
 
   async presentWelcomeToast(user: string) {
@@ -37,8 +37,8 @@ export class InicioPage implements OnInit {
     toast.present();
   }
 
-  onUserButtonPressed() {
-    this.router.navigate(['/login'])
+  onProfileButtonPressed() {
+    this.router.navigate(['/profile'])
   }
   onMapButtonPressed() {
     this.router.navigate(['/map'])

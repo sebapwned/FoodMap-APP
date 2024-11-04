@@ -20,4 +20,5 @@ export class RegisterPage implements OnInit {
   onUserButtonPressed() {
     this.router.navigate(['/login'])
   }
+  
 }

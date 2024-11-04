@@ -1,35 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-map',
-  templateUrl: './map.page.html',
-  styleUrls: ['./map.page.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss'],
 })
-export class MapPage implements OnInit {
+export class ProfilePage implements OnInit {
 
-  user: string = '';
-
-  constructor(private navCtrl: NavController, private route: ActivatedRoute,  private router: Router) { }
+  constructor(private navCtrl: NavController, private router: Router) { }
 
   ngOnInit() {
-  
-
   }
-
+  
   goBack() {
     this.navCtrl.back();
   }
-
- 
   onProfileButtonPressed() {
     this.router.navigate(['/profile'])
   }
-
+  onMapButtonPressed() {
+    this.router.navigate(['/map'])
+  }
   onHomeButtonPressed() {
     this.router.navigate(['/inicio'])
   }
-  
 }
