@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router' 
+import { Router } from '@angular/router' ;
+import { StorageService } from '../managers/StorageService';
 
 @Component({
   selector: 'app-splash',
@@ -8,15 +9,29 @@ import { Router } from '@angular/router'
 })
 export class SplashPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private storageService: StorageService 
+  ) { }
 
-  goToLogin() {
-    this.router.navigate(['/login']) //Funcion para navegar a login
-  }
   ngOnInit() {
-    setTimeout(() => {
-      this.router.navigate(['/login']);  
-    }, 5000)
+  }
+
+  async ionViewDidEnter() {
+    this.checkSession()
+  }
+
+  async checkSession() {
+    const user = await this.storageService.get('user');
+    if (user) {
+      setTimeout(() => {
+        this.router.navigate(['/inicio']);  
+      }, 4000)
+    } else {
+      setTimeout(() => {
+        this.router.navigate(['/login']);  
+      }, 4000)
+    }
   }
 }
  

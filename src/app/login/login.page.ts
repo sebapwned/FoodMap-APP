@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SessionManager } from 'src/app/managers/SessionManager';
-import { ToastController } from '@ionic/angular';
+import { UserLoginUseCase } from '../use-cases/user-login.use-case';
+import { CancelAlertService } from '../managers/CancelAlertService';
+
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,12 @@ import { ToastController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router: Router, private sessionManager: SessionManager, private toastController: ToastController) { }
+  constructor(
+    private router: Router, 
+    private userLoginUseCase: UserLoginUseCase,
+    private alert: CancelAlertService // Inyecta el servicio de alertas
+
+  ) { }
 
   
     email: string = '';
@@ -20,31 +26,27 @@ export class LoginPage implements OnInit {
   }
   
   async onLoginButtonPressed() {
-    if (this.sessionManager.performLogin(this.email, this.password)) {
-      // Mostrar el mensaje de éxito usando Toast
-      const toast = await this.toastController.create({
-        message: '¡Ingreso Exitoso!',
-        duration: 1000,  
-        color: 'success',  
-        position: 'top'    
-      });
-      toast.present();
-      this.router.navigate(['/inicio'], { queryParams: { user: this.email } });
-    } else {
+    const result = await this.userLoginUseCase.performLogin(this.email, this.password);
 
-      // Mostrar el mensaje de error usando Toast
-      const errorToast = await this.toastController.create({
-        message: 'Las credenciales ingresadas son inválidas.',
-        duration: 2000,  
-        color: 'danger',  
-        position: 'top'   
-      });
-      errorToast.present();
-      
-      this.email = '';
-      this.password = '';
+    if (result.success) {
+      this.alert.showAlert(
+        'Login exitoso',
+        'Has iniciado sesión correctamente.',
+        () => {
+          this.router.navigate(['/inicio']); // Navegar a inicio cuando el login sea exitoso
+        }
+      );
+    } else {
+      this.alert.showAlert(
+        'Error',
+        result.message,
+        () => {
+          this.router.navigate(['/splash']); 
+        }
+      );
     }
   }
+
 
   onRegisterButtonPressed() {
     this.router.navigate(['/register'])

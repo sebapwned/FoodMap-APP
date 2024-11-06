@@ -20,6 +20,25 @@
   color: black;
 }
 
+.logout-button {
+  position: absolute;
+  top: 10vh;
+  right: 10px;
+  --background: #E26D5D;
+  color: white;
+  border: 1px solid black;
+  border-radius: 16px; 
+} 
+
+.user-label {
+  position: absolute;
+  top: 5vh;
+  right: 10px;
+    	p{
+        color: #ffffff;    
+  }
+}
+
 .footer {
   position: fixed;
   bottom: 0;

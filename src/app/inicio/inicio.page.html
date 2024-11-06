@@ -4,6 +4,14 @@
     <ion-button class="back-button" (click)="goBack()">
       <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
     </ion-button>
+    
+    <ion-button class="logout-button" (click)="onSignOutButtonPressed()">
+      Log out
+    </ion-button>
+    <ion-label class="user-label">
+      <p>Bienvenido {{ user?.nombre || 'Nombre no disponible' }}</p>
+    </ion-label>
+
   </div>
 <ion-footer class="footer">
   <ion-tab-bar slot="bottom" class="footer-tab-bar">

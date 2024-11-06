@@ -17,35 +17,30 @@
 
     <ion-item>
       <ion-label position="floating">E-mail</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Re-Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Nombre</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="nombre"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Apellido</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="apellido"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Dirección</ion-label>
-      <ion-input type="text" ></ion-input>
+      <ion-input type="text" [(ngModel)]="direccion" ></ion-input>
     </ion-item>
 
-    <ion-button expand="block" (click)="onUserButtonPressed()" class="register-button">Regístrate</ion-button>
+    <ion-button expand="block" (click)="onRegisterButtonPressed()" class="register-button">Registrarse</ion-button>
 
     <ion-button fill="outline" class="google-login-button" href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=Ab5oB3poXFswRbD-IMLvnGCr_QAXuu-KN4c4Ka9coEFK_UyYppJIutRmYZ6RORl8OlZWjAWipletEQ&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-2111964797%3A1726202516783331&ddm=0">
       <ion-icon slot="start" name="logo-google"></ion-icon>
