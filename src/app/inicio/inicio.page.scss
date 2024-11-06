@@ -1,3 +1,15 @@
+swiper-container { 
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 * {
   font-family: 'Fredoka One', sans-serif;
 }
@@ -9,7 +21,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 70px; /* Espacio para el footer */
+  padding-bottom: 70px;
+}
+
+.bootstrap-carousel .carousel-inner img {
+  width: 100%;
+  height: auto;
 }
 
 .back-button {
@@ -29,7 +46,6 @@
 
 .footer-tab-bar {
   --background: #E26D5D; 
-  --color-selected: #ffffff; /* Color del icono cuando está seleccionado */
-  --color: #000000; /* Color de los iconos cuando no están seleccionados */
+  --color-selected: #ffffff;
+  --color: #000000;
 }
-

@@ -12,15 +12,28 @@ import { Router } from '@angular/router';
 export class InicioPage implements OnInit {
   
   user: string = '';
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    autoplay: {
+      delay: 2000,
+    },
+    loop: true
+  };
 
-  constructor(private navCtrl: NavController, private route: ActivatedRoute, private toastController: ToastController, private router: Router) { }
+
+  constructor(
+    private navCtrl: NavController,
+    private route: ActivatedRoute,
+    private toastController: ToastController,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    // Obtener el parámetro 'user' de la URL
     this.route.queryParams.subscribe(params => {
       this.user = params['user'] || 'Usuario';
-      this.presentWelcomeToast(this.user);  // Muestra el toast cuando cargue la vista
-    });  
+      this.presentWelcomeToast(this.user);
+    });
   }
 
   goBack() {
@@ -30,17 +43,18 @@ export class InicioPage implements OnInit {
   async presentWelcomeToast(user: string) {
     const toast = await this.toastController.create({
       message: `¡Bienvenido, ${user}!`,
-      duration: 2000,  
-      color: 'success', 
-      position: 'middle',  
+      duration: 2000,
+      color: 'success',
+      position: 'middle'
     });
     toast.present();
   }
 
   onProfileButtonPressed() {
-    this.router.navigate(['/profile'])
+    this.router.navigate(['/profile']);
   }
+
   onMapButtonPressed() {
-    this.router.navigate(['/map'])
+    this.router.navigate(['/map']);
   }
 }

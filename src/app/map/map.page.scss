@@ -6,10 +6,9 @@
   background: linear-gradient(to bottom, #f27874, #e09f8f); 
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   padding-bottom: 70px; /* Espacio para el footer */
+  align-items: center;
 }
 
 .back-button {
@@ -29,7 +28,61 @@
 
 .footer-tab-bar {
   --background: #E26D5D; 
-  --color-selected: #ffffff; /* Color del icono cuando está seleccionado */
-  --color: #000000; /* Color de los iconos cuando no están seleccionados */
+  --color-selected: #ffffff;
+  --color: #000000;
 }
 
+#map {
+  margin-top: 60px;
+  width: 100%;
+  height: 60vh; /* Cambiado a unidades relativas para adaptarse mejor a la pantalla */
+  position: relative; /* Cambiado de absolute a relative */
+}
+
+.ubic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  padding: 15px;
+  width: 90%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #F85430;
+  border-radius: 10px;
+  padding: 8px;
+  width: 100%;
+}
+
+.search-bar input {
+  border: none;
+  background: none;
+  color: black;
+  flex: 1;
+  outline: none;
+}
+
+.search-bar ion-icon {
+  color: black;
+  margin-left: 8px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.buttons button {
+  background-color: #F85430;
+  border: none;
+  color: black;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
