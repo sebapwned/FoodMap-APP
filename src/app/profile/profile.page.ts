@@ -26,4 +26,6 @@ export class ProfilePage implements OnInit {
   onHomeButtonPressed() {
     this.router.navigate(['/inicio'])
   }
+  
+
 }

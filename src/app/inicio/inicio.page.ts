@@ -1,53 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { ActivatedRoute } from '@angular/router';
-import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { UserLogoutUseCase } from '../use-cases/user-logout.user-case';
+import { CancelAlertService } from '../managers/CancelAlertService';
+import { StorageService } from '../managers/StorageService';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
-export class InicioPage implements OnInit {
-  
-  user: string = '';
-  slideOpts = {
-    initialSlide: 0,
-    speed: 400,
-    autoplay: {
-      delay: 2000,
-    },
-    loop: true
-  };
 
+export class InicioPage implements OnInit {
+  user: any;
+  currentIndex: number = 0;
+  promos = [
+    { img: 'assets/images-inicio/promo 1 1.png' },
+    { img: 'assets/images-inicio/promo 2 1.png' },
+    { img: 'assets/images-inicio/promo 3 1.png' },
+  ];
 
   constructor(
-    private navCtrl: NavController,
-    private route: ActivatedRoute,
-    private toastController: ToastController,
-    private router: Router
+    private navCtrl: NavController, 
+    private router: Router,
+    private logoutUseCase: UserLogoutUseCase,
+    private cancelAlertService: CancelAlertService,
+    private storageService: StorageService
   ) { }
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.user = params['user'] || 'Usuario';
-      this.presentWelcomeToast(this.user);
-    });
+  ngOnInit() { }
+
+  async ionViewDidEnter() {
+    this.user = await this.storageService.get('user');
+    if (!this.user) {
+      console.log('No se encontraron datos del usuario.');
+    }
   }
 
   goBack() {
     this.navCtrl.back();
-  }
-
-  async presentWelcomeToast(user: string) {
-    const toast = await this.toastController.create({
-      message: `¡Bienvenido, ${user}!`,
-      duration: 2000,
-      color: 'success',
-      position: 'middle'
-    });
-    toast.present();
   }
 
   onProfileButtonPressed() {
@@ -56,5 +47,30 @@ export class InicioPage implements OnInit {
 
   onMapButtonPressed() {
     this.router.navigate(['/map']);
+  }
+  
+  async onSignOutButtonPressed() {
+    this.cancelAlertService.showAlert(
+      'Cerrar sesión',
+      '¿Estás seguro de que quieres cerrar sesión?',
+      async () => {
+        this.logoutUseCase.performLogout();
+        this.router.navigate(['/splash']);
+      },
+      () => { }
+    );
+  }
+
+  moveCarousel(direction: string) {
+    if (direction === 'next') {
+      this.currentIndex = (this.currentIndex + 1) % this.promos.length;
+    } else if (direction === 'prev') {
+      this.currentIndex = (this.currentIndex - 1 + this.promos.length) % this.promos.length;
+    }
+    
+    const carouselWrapper = document.querySelector('.carousel-wrapper') as HTMLElement;
+    if (carouselWrapper) {
+      carouselWrapper.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+    }
   }
 }

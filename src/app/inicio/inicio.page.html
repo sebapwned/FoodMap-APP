@@ -1,26 +1,65 @@
 <ion-content [fullscreen]="true" class="profile-content">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <div class="home-background">
-    <ion-button class="back-button" (click)="goBack()">
-      <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
-    </ion-button>
-    <swiper-container>
-      <swiper-slide><img src="assets/images-inicio/promo 1 1.png" alt="Promoción 1"></swiper-slide>
-      <swiper-slide><img src="assets/images-inicio/promo 2 1.png" alt="Promoción 2"></swiper-slide>
-      <swiper-slide><img src="assets/images-inicio/promo 3 1.png" alt="Promoción 3"></swiper-slide>
-    </swiper-container>
+
+      <div class="header-buttons">
+        <ion-button class="back-button" (click)="goBack()">
+          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+        </ion-button>
+        <ion-button class="logout-button" (click)="onSignOutButtonPressed()">
+          Log out
+        </ion-button>
+      </div>
+      <ion-label class="user-label">
+        <p>Bienvenido {{ user?.nombre || 'Nombre no disponible' }}</p>
+      </ion-label>
+      
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+        <ion-card *ngFor="let promo of promos; let i = index" [ngClass]="{'active': currentIndex === i}">
+          <ion-img [src]="promo.img"></ion-img>
+        </ion-card>
+      </div>
+    </div>
+    <div class="carousel-buttons">
+      <ion-button class="caro-button" (click)="moveCarousel('prev')">Anterior</ion-button>
+      <ion-button class="caro-button" (click)="moveCarousel('next')">Siguiente</ion-button>
+    </div>
+    <div class="category-section">
+      <h2>COMIDA PERUANA</h2>
+      <div class="category-grid">
+        <ion-img src="assets/images-inicio/imagen-5.png"></ion-img>
+        <ion-img src="assets/images-inicio/imagen-6.png"></ion-img>
+        <ion-img src="assets/images-inicio/imagen-7.png"></ion-img>
+      </div>
+  
+      <h2>COMIDA ITALIANA</h2>
+      <div class="category-grid">
+        <ion-img src="assets/images-inicio/imagen-8.png"></ion-img>
+        <ion-img src="assets/images-inicio/imagen-9.png"></ion-img>
+        <ion-img src="assets/images-inicio/imagen-10.png"></ion-img>
+      </div>
+  
+      <h2>NUEVOS LOCALES</h2>
+      <div class="category-grid">
+        <ion-img src="assets/images-inicio/imagen-11.png"></ion-img>
+        <ion-img src="assets/images-inicio/imagen-12.png"></ion-img>
+        <ion-img src="assets/images-inicio/imagen-13.png"></ion-img>
+      </div>
+    </div>
   </div>
-<ion-footer class="footer">
-  <ion-tab-bar slot="bottom" class="footer-tab-bar">
-    <ion-tab-button tab="mapa" (click)="onMapButtonPressed()">
-      <ion-icon name="map-outline"></ion-icon>
-    </ion-tab-button>
-    <ion-tab-button tab="inicio" href="#">
-      <ion-icon name="home-outline"></ion-icon>
-    </ion-tab-button>
-    <ion-tab-button tab="perfil" (click)="onProfileButtonPressed()">
-      <ion-icon name="person-outline"></ion-icon>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-footer>
+  
+  <ion-footer class="footer">
+    <ion-tab-bar slot="bottom" class="footer-tab-bar">
+      <ion-tab-button tab="mapa" (click)="onMapButtonPressed()">
+        <ion-icon name="map-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="inicio" href="#">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="perfil" (click)="onProfileButtonPressed()">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-footer>
 </ion-content>

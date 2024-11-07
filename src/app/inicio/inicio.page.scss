@@ -1,15 +1,3 @@
-swiper-container { 
-  width: 100%;
-  height: 100%;
-}
-
-swiper-slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 * {
   font-family: 'Fredoka One', sans-serif;
 }
@@ -24,17 +12,31 @@ swiper-slide {
   padding-bottom: 70px;
 }
 
-.bootstrap-carousel .carousel-inner img {
-  width: 100%;
-  height: auto;
-}
-
 .back-button {
   position: absolute;
   top: 20px;
   left: 10px;
   --background: transparent;
   color: black;
+}
+
+.logout-button {
+  position: absolute;
+  top: 10vh;
+  right: 10px;
+  --background: #E26D5D;
+  color: white;
+  border: 1px solid black;
+  border-radius: 16px; 
+} 
+
+.user-label {
+  position: absolute;
+  top: 5vh;
+  right: 10px;
+    	p{
+        color: #ffffff;    
+  }
 }
 
 .footer {
@@ -45,7 +47,60 @@ swiper-slide {
 }
 
 .footer-tab-bar {
-  --background: #E26D5D; 
+  --background: #E26D5D;
   --color-selected: #ffffff;
   --color: #000000;
+}
+
+.carousel-container {
+  padding-top: 110px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+ion-card {
+  --background: transparent;
+  min-width: 91%;
+  opacity: 0.5;
+  transform: scale(0.8);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+ion-card.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.caro-button {
+  --background: transparent;
+  color: black;
+}
+
+.category-section {
+  color: #000000;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.category-grid ion-img {
+  flex: 1;
+  max-width: 30%;
 }
