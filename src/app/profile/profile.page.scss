@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 70px; /* Espacio para el footer */
+  padding-bottom: 70px; /* espacio para el footer */
 }
 
 .back-button {
@@ -72,7 +72,7 @@ ion-item {
   }
 }
 
-.register-button {
+.register-button,.changepassword-button,.deleteaccount-button {
   display: flex; 
   align-items: center; 
   justify-content: center; 
@@ -91,6 +91,18 @@ ion-item {
   color: #ffffff;
 }
 
+.changepassword-button{
+  --background: #F85430;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.deleteaccount-button{
+  --background: #F85430;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -100,8 +112,8 @@ ion-item {
 
 .footer-tab-bar {
   --background: #E26D5D; 
-  --color-selected: #ffffff; /* Color del icono cuando está seleccionado */
-  --color: #000000; /* Color de los iconos cuando no están seleccionados */
+  --color-selected: #ffffff; /* color del icono cuando esta seleccionado */
+  --color: #000000; /* color de los iconos cuando no están seleccionados */
 }
 
 * {

@@ -7,7 +7,10 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 //  interfaz UserData para describir los atributos del documento ya que no me entrega un valor como string email para llevarla a ionic storage si no la defino aca
 interface UserData {
   email?: string;
+  password?: string;
   nombre?: string;
+  apellido?: string;
+  direccion?: string;
 }
 
 @Injectable({
@@ -43,7 +46,10 @@ export class UserLoginUseCase {
           await this.storageService.set('user', {
             uid: uid,
             email: userData?.email || '',  // Si email es nulo, guarda un string vacío
-            nombre: userData?.nombre  || ''
+            password: userData?.password || '',
+            nombre: userData?.nombre  || '',
+            apellido: userData?.apellido || '',
+            direccion: userData?.direccion || ''
           });
 
           return { success: true, message: "Login successful" };
