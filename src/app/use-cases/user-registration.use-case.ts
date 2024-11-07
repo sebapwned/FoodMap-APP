@@ -14,16 +14,16 @@ export class UserRegistrationUseCase {
 
   async performRegistration(email: string, password: string, nombre: string, apellido: string, direccion: string): Promise<{ success: boolean; message: string }> {
     try {
-      // Registra al usuario en Firebase Authentication
+      // registra al usuario en Firebase Authentication
       const userCredential = await this.fireAuth.createUserWithEmailAndPassword(email, password);
       const user = userCredential.user;
 
       if (user) {
-        // Obtén el UID, el nombre de usuario 
+        // obtener el uid del usuario
         const uid = user.uid;
    
 
-        // Crear objeto con los datos del usuario
+        // crear un objeto con los datos del usuario
         const userData = {
           uid: uid,
           email: email,
@@ -33,15 +33,15 @@ export class UserRegistrationUseCase {
 
         };
 
-        // Guarda la información del usuario en Firestore, al llamar a collection 'users' crea una coleccion de users si no existe, crea un documento con el uid y le agrega el userdata al documento
+        // guarda la información del usuario en Firestore, al llamar a collection 'users' crea una coleccion de users si no existe, crea un documento con el uid y le agrega el userdata al documento
         await this.firestore.collection('users').doc(uid).set(userData);
       }
 
-      // Devuelve true si fue exitoso, con un mensaje
+      
       return { success: true, message: "Usuario registrado con éxito" };
 
     } catch (error: any) {
-      // Manejo de errores basado en el código de Firebase
+      
       let errorMessage = 'Ocurrió un error al registrar el usuario';
 
       switch (error.code) {
@@ -59,7 +59,7 @@ export class UserRegistrationUseCase {
           break;
       }
 
-      // Devuelve false si hubo un error, junto con el mensaje de error
+      
       return { success: false, message: errorMessage };
     }
   }
