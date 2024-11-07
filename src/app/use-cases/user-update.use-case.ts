@@ -86,6 +86,12 @@ export class UserUpdateUseCase {
     async performDeleteAccount(uid: string): Promise<{ success: boolean; message: string }> {
         try {
             await this.firestore.collection('users').doc(uid).delete();
+            // Sign out from Firebase
+            await this.fireAuth.signOut();
+
+            // Clear all data from Ionic Storage
+            await this.storageService.clear();
+
       return { success: true, message: 'Usuario eliminado con éxito' };
     } catch (error: any) {
       return { success: false, message: `Error al eliminar el usuario: ${error.message}` };

@@ -54,7 +54,7 @@ export class UserLoginUseCase {
 
           return { success: true, message: "Login successful" };
         } else {
-          return { success: false, message: "User not found in Realtime Database" };
+          return { success: false, message: "Invalid User" };
         }
 
       } else {
