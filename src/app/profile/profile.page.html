@@ -14,40 +14,31 @@
     <h4>E-mail</h4>
     <ion-item>
       <ion-label position="floating"></ion-label>
-      <ion-input type="email"></ion-input>
-    </ion-item>
-
-    <h4>Password</h4>
-    <ion-item>
-      <ion-label position="floating"></ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-
-    <h4>Re-Password</h4>
-    <ion-item>
-      <ion-label position="floating"></ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [(ngModel)]="userEmail" ></ion-input>
     </ion-item>
 
     <h4>Nombre</h4>
     <ion-item>
       <ion-label position="floating"></ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input [(ngModel)]="userNombre" ></ion-input>
     </ion-item>
 
     <h4>Apellido</h4>
     <ion-item>
       <ion-label position="floating"></ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input [(ngModel)]="userApellido" ></ion-input>
     </ion-item>
 
     <h4>Dirección</h4>
     <ion-item>
       <ion-label position="floating"></ion-label>
-      <ion-input type="text" ></ion-input>
+      <ion-input [(ngModel)]="userDireccion" ></ion-input>
     </ion-item>
 
-    <ion-button expand="block" (click)="onProfileButtonPressed()" class="register-button">Guardar</ion-button>
+    <ion-button expand="block" (click)="onUpdateButtonPressed()" class="register-button">Guardar</ion-button>
+    <ion-button expand="block" (click)="onChangePasswordButtonPressed()" class="changepassword-button">Cambiar Contraseña</ion-button>
+    <ion-button expand="block" (click)="onDeleteAccountButtonPressed()" class="deleteaccount-button">Eliminar Cuenta</ion-button>
+
 
   </div>
 </div>

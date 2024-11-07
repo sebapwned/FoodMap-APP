@@ -42,7 +42,7 @@ export class RegisterPage implements OnInit {
       if (result.success) {
         this.alert.showAlert(
           'Registro exitoso',
-          'Ya eres parte de nuestro sistema',
+          'Gracias por registrarte en Food Map',
           () => {
             this.router.navigate(['/login']);
           }
