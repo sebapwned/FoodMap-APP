@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true" class="register-content"  >
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <div class="register-background">
+
+     <ion-button class="back-button" (click)="goBack()">
+      <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+
+    <div class="header-container">
+      <h1 class="main-title">
+        <span>Agregar un</span><br>
+        <span class="highlight">Restaurant</span>
+      </h1>
+    </div>
+
+  <div class="form-container">
+    
+    <div class="update-photo-message">
+      <ion-label>Para agregar una foto del restaurant, haz click en la imagen</ion-label>
+    </div>
+    <ion-card>
+      <ion-card-content class="card-content">
+        <ion-avatar class="avatar-container">
+          <img [src]="userPhotoURL" alt="Avatar">
+          <!-- Botón transparente sobre la imagen -->
+          <ion-button fill="clear" class="avatar-overlay-button" (click)="onRestaurantImagePressed()"></ion-button>
+        </ion-avatar>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-item>
+      <ion-label position="floating">Nombre Restaurant</ion-label>
+      <ion-input type="text" [(ngModel)]="nombreRestaurant"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Tipo Comida</ion-label>
+      <ion-input type="text" [(ngModel)]="tipoComida"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input type="text" [(ngModel)]="direccion"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Horario Atención</ion-label>
+      <ion-input type="text" [(ngModel)]="horarioAtencion"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="onAddRestaurantButtonPressed()" class="register-button">Agregar</ion-button>
+
+  </div>
+</div>
+</ion-content>

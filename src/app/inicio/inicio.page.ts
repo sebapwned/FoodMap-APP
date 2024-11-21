@@ -41,6 +41,10 @@ export class InicioPage implements OnInit {
     this.navCtrl.back();
   }
 
+  onAddButton() {
+    this.router.navigate(['/restaurants']);
+  }
+
   onProfileButtonPressed() {
     this.router.navigate(['/profile']);
   }

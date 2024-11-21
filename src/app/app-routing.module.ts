@@ -36,6 +36,10 @@ const routes: Routes = [
     path: 'password-update',
     loadChildren: () => import('./password-update/password-update.module').then( m => m.PasswordUpdatePageModule)
   },
+  {
+    path: 'restaurants',
+    loadChildren: () => import('./restaurants/restaurants.module').then( m => m.RestaurantsPageModule)
+  },
 
 
 
