@@ -1,20 +1,14 @@
 <ion-content [fullscreen]="true" class="map-content">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-  
   <div class="home-background">
-    <ion-button class="back-button" (click)="goBack()">
+    <ion-button class="back-button" (click)="goBack()" slot="fixed" fill="clear">
       <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
     </ion-button>
-    <div id="map"></div>
-    <div class="ubic">
-      <div class="search-bar">
-        <input type="text" placeholder="Tu ubicación" />
-        <ion-icon name="search-outline"></ion-icon>
-      </div>
-      <div class="buttons">
-        <button>Precios</button>
-        <button>Ciudad</button>
-        <button>Comida</button>
+
+    <div *ngFor="let location of locations" class="map-link-container" (click)="openMap(location.url)">
+      <ion-img [src]="location.img" [alt]="location.name"></ion-img>
+      <div class="description">
+        <h2>{{ location.name }}</h2>
+        <p>{{ location.description }}</p>
       </div>
     </div>
   </div>

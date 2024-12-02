@@ -15,3 +15,7 @@ describe('MapPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+openMap() {
+  window.open('https://maps.app.goo.gl/eUnCYGcNTxWJPu1w7', '_blank');
+}
