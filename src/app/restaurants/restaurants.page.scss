@@ -1,113 +1,197 @@
+/* Fondo general */
 .register-background {
-    background: linear-gradient(to bottom, #f27874, #e09f8f); 
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+  background: linear-gradient(to bottom, #f27874, #e09f8f);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-  * {
-    font-family: 'Fredoka One', sans-serif;
-  }
+/* Fuente global */
+* {
+  font-family: 'Fredoka One', sans-serif;
+}
 
-  .back-button {
-    position: absolute;
-    top: 20px;
-    left: 10px;
-    --background: transparent;
-    color: black;
-  }
+/* Botón de retroceso */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  --background: transparent;
+  color: black;
+}
 
+/* Título principal */
 .main-title {
-    font-size: 30px;
-    color: #ffffff;
-    text-align: center;
-  }
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+}
 
-  .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 350px;
-  }
+/* Contenedor del encabezado */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
+}
 
-  .form-container {
-    background: transparent;
-    padding: 10px;
-    border-radius: 20px;
-    width: 80%;
-    height: auto;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+/* Formulario */
+.form-container {
+  background: transparent;
+  padding: 10px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-  ion-item {
-    --background: #e5a5a2; 
-    border-radius: 5px;
-    margin: 5px 0;
-    width: 80vw;
-    height: 10vh;
-    max-width: 350px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  
-    ion-label {
-      color: white; 
-      font-family: 'Fredoka One', sans-serif;
-      
-    }
-  
-    ion-input {
-      color: white;
-    }
-  }
+/* Estilo de los ion-item */
+ion-item,
+ion-list ion-item {
+  --background: #e5a5a2;
+  --color: white;
+  --placeholder-color: white;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 80vw;
+  height: 10vh;
+  max-width: 350px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center; /* Centrado vertical del contenido */
+}
 
-  .register-button {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    font-size: 13px; 
-    text-align: center; 
-    border: 1px solid black;
-    border-radius: 16px; 
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    width: 80vw;
-    margin: 1px 0;
-  }
-  
-  .register-button {
-    --background: #F85430;
-    margin-top: 20px;
-    color: #ffffff;
-  }
-  
-  ion-avatar {
-    width: 120px;
-    height: 120px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    position: relative; /* Necesario para posicionar el botón sobre la imagen */
-  }
+/* Estilo global para los ion-label */
+ion-label {
+  color: white;
+  font-family: 'Fredoka One', sans-serif !important;
+}
 
-  .avatar-overlay-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    z-index: 1;
-  }
+/* Estilo de los campos de texto */
+ion-input,
+ion-textarea,
+ion-select {
+  color: white;
+  font-family: 'Fredoka One', sans-serif;
+  width: 100%; /* Asegura que ocupa todo el ancho */
+  height: 100%; /* Ocupa toda la altura del contenedor */
+  padding: 0 !important; /* Elimina padding interno */
+  margin: 0 !important; /* Elimina márgenes internos */
+}
 
-  .update-photo-message {
-    text-align: center;
-    margin-bottom: 8px; /* Se ajusta la distancia del mensaje */
-    font-weight: bold;
-  }
-  
+/* Placeholder de ion-select */
+ion-select {
+  --background: #e5a5a2; /* Asegura fondo consistente */
+  --placeholder-color: white; /* Color del texto placeholder */
+  --color: white; /* Color del texto seleccionado */
+  display: flex; /* Asegura que el contenido esté bien distribuido */
+  align-items: center; /* Centra el texto verticalmente */
+}
+
+/* Placeholder dentro del ion-select */
+ion-select::part(placeholder) {
+  color: white !important; /* Placeholder blanco */
+  font-family: 'Fredoka One', sans-serif; /* Fuente consistente */
+}
+
+/* Ajuste del contenido del select */
+ion-select::part(text) {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%; /* Asegura que ocupe toda la altura */
+  display: flex;
+  align-items: center; /* Centra el texto verticalmente */
+  background: none !important; /* Elimina cualquier fondo no deseado */
+}
+
+/* Ajustes de íconos en el select */
+ion-select .select-icon {
+  color: white; /* Color blanco para íconos */
+  right: 12px; /* Posición alineada a la derecha */
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%);
+}
+
+/* Contenedor de dirección con ícono */
+.input-with-icon-container {
+  position: relative;
+  width: 80vw;
+  max-width: 350px;
+  margin: 5px 0;
+}
+
+.input-with-icon-container ion-item {
+  --background: #e5a5a2;
+  width: 100%;
+  height: 10vh;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Ícono dentro del campo de dirección */
+.location-icon {
+  position: absolute;
+  right: 8px; /* Alineado a la derecha */
+  top: 45%; /* Ajustado para que esté más arriba */
+  transform: translateY(-50%);
+  font-size: 28px; /* Tamaño del ícono más grande */
+  color: black; /* Ícono en color negro */
+  cursor: pointer; /* Indica que es interactivo */
+  z-index: 1;
+  transition: transform 0.2s, color 0.2s; /* Animación en hover */
+}
+
+/* Efecto hover sobre el ícono */
+.location-icon:hover {
+  transform: translateY(-50%) scale(1.2); /* Agrandar ligeramente */
+}
+
+/* Botón de agregar */
+.register-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 16px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  width: 80vw;
+  margin: 20px 0 1px;
+  --background: #F85430;
+  color: #ffffff;
+}
+
+/* Imagen de avatar */
+ion-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 16px 0;
+  position: relative;
+}
+
+.avatar-overlay-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+}
+
+/* Mensaje debajo de la foto */
+.update-photo-message {
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: bold;
+}

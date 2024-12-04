@@ -10,17 +10,20 @@ export class RestaurantUseCase {
     private firestore: AngularFirestore,
   ) {}
 
-  async performRestaurantRegistration(userPhotoURL: string, nombreRestaurant: string, tipoComida: string, direccion: string, horarioAtencion: string): Promise<{ success: boolean; message: string }> {
+  async performRestaurantRegistration(uid: string, userPhotoURL: string, nombreRestaurant: string, tipoComida: string, direccion: string, horarioAtencion: string, valoracion: string, resena: string): Promise<{ success: boolean; message: string }> {
     try {
         // uso de trim para verificar que los campos no esten vacios
-        if (userPhotoURL.trim() && nombreRestaurant.trim() && tipoComida.trim() && direccion.trim() && horarioAtencion.trim()) {
-          // Crear un objeto con los datos del restaurante
+        if (uid.trim() && userPhotoURL.trim() && nombreRestaurant.trim() && tipoComida.trim() && direccion.trim() && horarioAtencion.trim() && valoracion.trim() && resena.trim()) {
+          // crear un objeto con los datos del restaurante
           const restaurantData = {
+            uid: uid,
             userPhotoURL: userPhotoURL,
             nombreRestaurant: nombreRestaurant,
             tipoComida: tipoComida,
             direccion: direccion,
-            horarioAtencion: horarioAtencion
+            horarioAtencion: horarioAtencion,
+            valoracion: valoracion,
+            resena: resena
           };
 
         // guarda la información del restaurant en Firestore, al llamar a collection 'restaurants' crea una coleccion de restaurants si no existe, crea un documento con el nombre del restaurant y le agrega el restaurantdata al documento

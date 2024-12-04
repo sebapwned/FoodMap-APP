@@ -81,4 +81,23 @@ export class UserLoginUseCase {
       return { success: false, message: errorMessage };
     }
   }
+
+  async getUserUid() {
+    try {
+      // recupera el objeto 'user' del almacenamiento
+      const user = await this.storageService.get('user');
+      
+      // comprobar que el objeto exista y tenga el campo 'uid'
+      if (user && user.uid) {
+        console.log('UID recuperado:', user.uid);
+        return user.uid; // Retorna el UID
+      } else {
+        console.warn('No se encontró el UID en el almacenamiento.');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error recuperando el UID:', error);
+      return null;
+    }
+  }
 }
