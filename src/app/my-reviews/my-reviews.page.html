@@ -5,10 +5,8 @@
       <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
     </ion-button>
 
-    <!-- Título centrado -->
     <h1 class="main-title">Mis Reseñas</h1>
 
-    <!-- Card de Reseñas -->
     <ion-card class="pink-card">
       <ion-card-header class="card-header">
         <ion-card-title class="centered-card-title">Reseñas Asociadas</ion-card-title>
@@ -27,6 +25,14 @@
               <p><strong>Tipo de Comida:</strong> {{ restaurant.tipoComida }}</p>
               <p><strong>Valoración:</strong> {{ restaurant.valoracion }}</p>
               <p><strong>Reseña:</strong> {{ restaurant.resena }}</p>
+
+              <!-- Botón para modificar reseña -->
+              <ion-button expand="block" class="modify-button" (click)="modifyReviewButtonPressed(restaurant)">
+                Modificar Reseña
+              </ion-button>
+              <ion-button expand="block" class="delete-button" (click)="deleteReviewButtonPressed(restaurant)">
+                Eliminar Reseña
+              </ion-button>
             </div>
           </ion-accordion>
         </ion-accordion-group>

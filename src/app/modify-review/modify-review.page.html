@@ -1,0 +1,59 @@
+<ion-content [fullscreen]="true" class="profile-content">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <div class="profile-background">
+
+    <!-- Header con Botón y Título -->
+    <div class="header-container">
+      <ion-button class="back-button" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <h1 class="main-title">Modificar Reseña</h1>
+    </div>
+
+    <ion-card class="pink-card">
+      <ion-card-content>
+        <!-- Imagen del Restaurante -->
+        <div class="update-photo-message">
+          <ion-label>Para modificar la foto del restaurant, haz click en la imagen</ion-label>
+        </div>
+        <div class="avatar-container">
+          <img [src]="restaurant.userPhotoURL" alt="Foto del restaurante">
+          <ion-button class="avatar-overlay-button" (click)="onRestaurantImagePressed()"></ion-button>
+        </div>
+
+        <!-- Campos para modificar los datos -->
+        <ion-item>
+          <ion-label position="stacked">Nombre del Restaurante</ion-label>
+          <ion-input [(ngModel)]="restaurant.nombreRestaurant"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Dirección</ion-label>
+          <ion-input [(ngModel)]="restaurant.direccion"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Horario</ion-label>
+          <ion-input [(ngModel)]="restaurant.horarioAtencion"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Tipo de Comida</ion-label>
+          <ion-input [(ngModel)]="restaurant.tipoComida"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Valoración</ion-label>
+          <ion-select [(ngModel)]="restaurant.valoracion" interface="popover" placeholder="Selecciona una valoración">
+            <ion-select-option *ngFor="let rating of [1, 2, 3, 4, 5]" [value]="rating.toString()">
+              {{ rating }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Reseña</ion-label>
+          <ion-textarea [(ngModel)]="restaurant.resena"></ion-textarea>
+        </ion-item>
+
+        <!-- Botón para guardar cambios -->
+        <ion-button expand="block" class="save-button" (click)="guardarCambios()">Guardar Cambios</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

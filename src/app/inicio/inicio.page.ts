@@ -41,6 +41,10 @@ export class InicioPage implements OnInit {
     this.navCtrl.back();
   }
 
+  onViewMyReviews() {
+    this.router.navigate(['/my-reviews']);
+  }
+
   onAddButton() {
     this.router.navigate(['/restaurants']);
   }

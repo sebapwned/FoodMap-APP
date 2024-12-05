@@ -57,19 +57,15 @@
       <ion-input type="text" [(ngModel)]="horarioAtencion"></ion-input>
     </ion-item>
 
-    <ion-list>
-      <ion-item>
-        <ion-label>Valoración</ion-label>
-        <ion-select
-          placeholder="Elige un puntaje"
-          [(ngModel)]="valoracion">
-          <ion-select-option *ngFor="let rating of [1, 2, 3, 4, 5]" [value]="rating.toString()">
-            {{ rating }}
-          </ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
-
+    <ion-item>
+      <ion-label position="floating">Valoración</ion-label>
+      <ion-select [(ngModel)]="valoracion" interface="popover" placeholder="Selecciona una valoración">
+        <ion-select-option *ngFor="let rating of [1, 2, 3, 4, 5]" [value]="rating.toString()">
+          {{ rating }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+   
     <ion-item>
       <ion-label position="floating">Reseña</ion-label>
       <ion-textarea [(ngModel)]="resena"></ion-textarea>

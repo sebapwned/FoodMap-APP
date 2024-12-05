@@ -1,19 +1,17 @@
 <ion-content [fullscreen]="true" class="profile-content">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <div class="home-background">
-
-      <div class="header-buttons">
-        <ion-button class="back-button" (click)="goBack()">
-          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
-        </ion-button>
-        <ion-button class="logout-button" (click)="onSignOutButtonPressed()">
-          Log out
-        </ion-button>
-      </div>
-      <ion-label class="user-label">
-        <p>Bienvenido {{ user?.nombre || 'Nombre no disponible' }}</p>
-      </ion-label>
-      
+    <div class="header-buttons">
+      <ion-button class="back-button" (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <ion-button class="logout-button" (click)="onSignOutButtonPressed()">
+        Log out
+      </ion-button>
+    </div>
+    <ion-label class="user-label">
+      <p>Bienvenido {{ user?.nombre || 'Nombre no disponible' }}</p>
+    </ion-label>
     <div class="carousel-container">
       <div class="carousel-wrapper">
         <ion-card *ngFor="let promo of promos; let i = index" [ngClass]="{'active': currentIndex === i}">
@@ -25,11 +23,10 @@
       <ion-button class="caro-button" (click)="moveCarousel('prev')">Anterior</ion-button>
       <ion-button class="caro-button" (click)="moveCarousel('next')">Siguiente</ion-button>
     </div>
-
-    <ion-button class="add-button" (click)="onAddButton()">
-      Agregar Restaurant
-    </ion-button>
-
+    <div class="action-buttons">
+      <ion-button class="add-button" (click)="onAddButton()">Agregar Reseña</ion-button>
+      <ion-button class="view-button" (click)="onViewMyReviews()">Ver mis Reseñas</ion-button>
+    </div>
     <div class="category-section">
       <h2>COMIDA PERUANA</h2>
       <div class="category-grid">
@@ -37,14 +34,12 @@
         <ion-img src="assets/images-inicio/imagen-6.png"></ion-img>
         <ion-img src="assets/images-inicio/imagen-7.png"></ion-img>
       </div>
-  
       <h2>COMIDA ITALIANA</h2>
       <div class="category-grid">
         <ion-img src="assets/images-inicio/imagen-8.png"></ion-img>
         <ion-img src="assets/images-inicio/imagen-9.png"></ion-img>
         <ion-img src="assets/images-inicio/imagen-10.png"></ion-img>
       </div>
-  
       <h2>NUEVOS LOCALES</h2>
       <div class="category-grid">
         <ion-img src="assets/images-inicio/imagen-11.png"></ion-img>
@@ -53,7 +48,6 @@
       </div>
     </div>
   </div>
-  
   <ion-footer class="footer">
     <ion-tab-bar slot="bottom" class="footer-tab-bar">
       <ion-tab-button tab="mapa" (click)="onMapButtonPressed()">

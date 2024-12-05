@@ -89,10 +89,29 @@ export class RestaurantsPage implements OnInit {
   }
 
   async onAddRestaurantButtonPressed() {
-
-    //llama al caso de uso para manejar el registro
+    // verificar que todos los campos estén llenos
+    if (
+      !this.nombreRestaurant.trim() ||
+      !this.tipoComida.trim() ||
+      !this.direccion.trim() ||
+      !this.horarioAtencion.trim() ||
+      !this.valoracion.trim() ||
+      !this.resena.trim()
+    ) {
+      // mostrar alerta si hay campos vacíos
+      this.alert.showAlert(
+        'Error',
+        'Todos los campos deben estar llenos.',
+        () => {
+          console.log('El usuario reconoció la alerta de error.');
+        }
+      );
+      return;
+    }
+  
+    // llama al caso de uso para manejar el registro
     const result = await this.restaurantUseCase.performRestaurantRegistration(
-      this.uid, 
+      this.uid,
       this.userPhotoURL,
       this.nombreRestaurant,
       this.tipoComida,
@@ -101,23 +120,23 @@ export class RestaurantsPage implements OnInit {
       this.valoracion,
       this.resena
     );
-
+  
     // si hay un mensaje de éxito, navega a otra vista
     if (result.success) {
       this.alert.showAlert(
-        'Agregaste un restaurant exitosamente',
-        'Disfruta de Food Map',
+        'Éxito',
+        'Reseña de restaurante agregada exitosamente.',
         () => {
           this.router.navigate(['/inicio']);
         }
       );
     } else {
-      // muestra el error proporcionado por el caso de uso
+      // Muestra el error proporcionado por el caso de uso
       this.alert.showAlert(
         'Error',
         result.message,
         () => {
-          this.clean();
+          console.log('Intentando nuevamente.');
         }
       );
     }

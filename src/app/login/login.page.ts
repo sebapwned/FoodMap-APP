@@ -14,18 +14,24 @@ export class LoginPage implements OnInit {
   constructor(
     private router: Router, 
     private userLoginUseCase: UserLoginUseCase,
-    private alert: CancelAlertService // Inyecta el servicio de alertas
+    private alert: CancelAlertService 
+    
 
   ) { }
 
   
     email: string = '';
     password: string = '';
+    isLoggingIn: boolean = false; // estado para evitar múltiples ejecuciones
 
   ngOnInit() {
   }
   
   async onLoginButtonPressed() {
+
+    if (this.isLoggingIn) return; // evita ejecutar múltiples veces
+    this.isLoggingIn = true; // bloquea nuevas ejecuciones hasta que termine
+
     const result = await this.userLoginUseCase.performLogin(this.email, this.password);
 
     if (result.success) {

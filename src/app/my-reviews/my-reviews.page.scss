@@ -52,18 +52,29 @@
   }
   
   /* Estilo para acordeones */
-  .accordion-custom {
-    --background: linear-gradient(to bottom, #f27874, #e09f8f); /* Mismo color que el fondo */
+.accordion-custom {
+    --background: #f27874; 
     --color: #ffffff; /* Texto blanco */
     margin: 10px 0;
     border-radius: 8px;
+    border: 2px solid black; /* Borde negro */
   }
   
   /* Encabezado del acordeón */
-  .accordion-header {
-    --background: transparent; /* Fondo transparente */
+.accordion-header {
+    --background: #f27874; /* Fondo del encabezado acordeón */
     color: #ffffff;
     font-weight: bold;
+  }
+  
+  /* Botón de Modificar Reseña */
+.modify-button {
+    --background: #f27874; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    font-weight: bold;
+    border-radius: 8px; /* Bordes redondeados */
+    margin-top: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
   }
   
   /* Footer */
@@ -73,6 +84,15 @@
     --color: #000000; /* Color de los iconos cuando no están seleccionados */
   }
   
+  .delete-button {
+    --background: #f27874; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    font-weight: bold;
+    border-radius: 8px; /* Bordes redondeados */
+    margin-top: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+
   /* Fuente global */
   * {
     font-family: 'Fredoka One', sans-serif;

@@ -73,37 +73,4 @@ export class ProfilePage  {
     }
   }
 
-  async onDeleteAccountButtonPressed() {
-    // obtener el user logeado del storageservice
-    this.user = await this.storageService.get('user');
-    // verificar que haya user y uid
-    if (this.user && this.user.uid) {
-    // extraer el uid del usuario
-      const uid = this.user.uid; 
-    // enviar el uid al caso de uso de delete account  
-      const result = await this.userUpdateUseCase.performDeleteAccount(uid);
-
-      if (result.success) {
-        this.alert.showAlert(
-          'Eliminación Exitosa',
-          'Tu cuenta ha sido eliminada correctamente.',
-          () => {
-            this.router.navigate(['/login']); 
-          }
-        );
-      } else {
-        this.alert.showAlert(
-          'Error',
-          result.message,
-          () => { }
-        );
-      }
-    } else {
-      this.alert.showAlert(
-        'Error',
-        'No se pudo obtener la información del usuario.',
-        () => { }
-      );
-    }
-  }
 }

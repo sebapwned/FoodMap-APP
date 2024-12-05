@@ -28,20 +28,22 @@
   color: white;
   border: 1px solid black;
   border-radius: 16px; 
-} 
+}
 
-.add-button {
+.add-button,
+.view-button {
   --background: #E26D5D;
   border: 1px solid black;
   border-radius: 16px; 
+  margin: 5px;
 }
 
 .user-label {
   position: absolute;
   top: 5vh;
   right: 10px;
-    	p{
-        color: #ffffff;    
+  p {
+    color: #ffffff;    
   }
 }
 
@@ -94,6 +96,13 @@ ion-card.active {
 .caro-button {
   --background: transparent;
   color: black;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
 }
 
 .category-section {

@@ -56,18 +56,30 @@ export class RestaurantUseCase {
       return { success: false, message: errorMessage };
     }
   }
-  async getRestaurantsByUid(uid: string): Promise<any[]> {
+  
+  async updateRestaurant(restaurantId: string, updatedData: any): Promise<{ success: boolean; message: string }> {
     try {
-      console.log('Consultando Firestore con UID:', uid);
-      const snapshot = await this.firestore
-        .collection('restaurants', (ref) => ref.where('uid', '==', uid))
-        .valueChanges({ idField: 'id' })
-        .toPromise(); 
-      console.log('Datos obtenidos desde Firestore:', snapshot);
-      return snapshot || [];
-    } catch (error) {
-      console.error('Error obteniendo los restaurantes:', error);
-      return [];
+      // actualizar el documento del restaurante
+      await this.firestore.collection('restaurants').doc(restaurantId).update(updatedData);
+      return { success: true, message: "Restaurante actualizado con éxito" };
+    } catch (error: any) {
+      console.error('Error al actualizar el restaurante:', error);
+      return { success: false, message: 'Error al actualizar el restaurante. Por favor, inténtelo de nuevo.' };
     }
   }
+
+  async deleteRestaurant(restaurantId: string): Promise<{ success: boolean; message: string }> {
+    try {
+      // eliminar el documento del restaurante
+      await this.firestore.collection('restaurants').doc(restaurantId).delete();
+      return { success: true, message: 'Reseña eliminada con éxito' };
+    } catch (error: any) {
+      console.error('Error al eliminar la reseña:', error);
+      return { success: false, message: 'Error al eliminar la reseña. Por favor, inténtelo de nuevo.' };
+    }
+  }
+
+
 }
+
+

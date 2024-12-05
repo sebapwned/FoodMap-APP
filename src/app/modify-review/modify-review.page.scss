@@ -1,0 +1,160 @@
+/* Fondo general */
+.profile-background {
+    background: linear-gradient(to bottom, #f27874, #e09f8f);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 20px;
+}
+
+/* Fuente global */
+* {
+    font-family: 'Fredoka One', sans-serif;
+}
+
+/* Contenedor del header (Botón y Título en la misma fila) */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Botón de retroceso */
+.back-button {
+    position: absolute;
+    left: 10px;
+    --background: transparent;
+    color: black;
+    font-size: 18px;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0;
+}
+
+/* Título principal */
+.main-title {
+    font-size: 26px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+}
+
+/* Contenedor del avatar */
+.avatar-container {
+    width: 150px;
+    height: 150px;
+    margin: 16px auto;
+    position: relative;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.avatar-overlay-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.avatar-container:hover .avatar-overlay-button {
+    opacity: 1;
+}
+
+/* Mensaje debajo de la foto */
+.update-photo-message {
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Estilo de los campos (ion-item) */
+ion-item {
+    --background: #e5a5a2;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 350px;
+    min-height: 60px; /* Altura mínima asegurada */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: flex-start; /* Alineación superior para el contenido */
+    flex-direction: column; /* Apila el label y el campo verticalmente */
+}
+
+/* Estilo para el label */
+ion-item ion-label {
+    color: white;
+    font-family: 'Fredoka One', sans-serif !important;
+    font-size: 13px; /* Ajustado para encajar mejor */
+    font-weight: bold;
+    margin-bottom: 1px; /* Separación entre el label y el campo */
+    text-align: left; /* Alineación a la izquierda */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+/* Estilo para los campos de texto */
+ion-item ion-input,
+ion-item ion-textarea {
+    color: white;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 14px; /* Reducido para mejor ajuste */
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 5px 10px; /* Espaciado interno ajustado */
+    box-shadow: none;
+}
+
+/* Tarjeta */
+.pink-card {
+    background-color: #E26D5D;
+    color: #ffffff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* Botón de guardar cambios */
+.save-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 16px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    width: 85%;
+    max-width: 350px;
+    margin: 20px auto 10px;
+    --background: #F85430;
+    color: #ffffff;
+}
