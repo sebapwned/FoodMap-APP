@@ -50,6 +50,14 @@
     color: #ffffff;
     margin: 0;
   }
+
+  /* Estilo para el contenido de los acordeones */
+.accordion-custom .ion-padding[slot="content"] {
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco para contraste */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+}
   
   /* Estilo para acordeones */
 .accordion-custom {
@@ -59,6 +67,8 @@
     border-radius: 8px;
     border: 2px solid black; /* Borde negro */
   }
+
+  
   
   /* Encabezado del acordeón */
 .accordion-header {
