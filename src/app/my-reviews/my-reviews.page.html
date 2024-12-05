@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true" class="profile-content">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <div class="profile-background">
+    <ion-button class="back-button" (click)="goBack()">
+      <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+
+    <!-- Título centrado -->
+    <h1 class="main-title">Mis Reseñas</h1>
+
+    <!-- Card de Reseñas -->
+    <ion-card class="pink-card">
+      <ion-card-header class="card-header">
+        <ion-card-title class="centered-card-title">Reseñas Asociadas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-accordion-group *ngIf="restaurants.length > 0">
+          <ion-accordion *ngFor="let restaurant of restaurants" [value]="'restaurant-' + restaurant.id" class="accordion-custom">
+            <ion-item slot="header" class="accordion-header">
+              <ion-label>{{ restaurant.nombreRestaurant }}</ion-label>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              <img [src]="restaurant.userPhotoURL" alt="Foto de {{ restaurant.nombreRestaurant }}" 
+                   style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 10px;" />
+              <p><strong>Dirección:</strong> {{ restaurant.direccion }}</p>
+              <p><strong>Horario:</strong> {{ restaurant.horarioAtencion }}</p>
+              <p><strong>Tipo de Comida:</strong> {{ restaurant.tipoComida }}</p>
+              <p><strong>Valoración:</strong> {{ restaurant.valoracion }}</p>
+              <p><strong>Reseña:</strong> {{ restaurant.resena }}</p>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
+        <p *ngIf="restaurants.length === 0">No hay reseñas asociadas a tu cuenta.</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-footer class="footer">
+    <ion-tab-bar slot="bottom" class="footer-tab-bar">
+      <ion-tab-button tab="mapa" (click)="onMapButtonPressed()">
+        <ion-icon name="map-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="inicio" (click)="onHomeButtonPressed()">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="perfil" (click)="onProfileButtonPressed()">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-footer>
+</ion-content>

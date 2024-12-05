@@ -59,12 +59,12 @@
 
     <ion-list>
       <ion-item>
-        <ion-label>Valoración</ion-label> 
+        <ion-label>Valoración</ion-label>
         <ion-select
           placeholder="Elige un puntaje"
           [(ngModel)]="valoracion">
-          <ion-select-option *ngFor="let rating of [1, 2, 3, 4, 5]" [value]="rating">
-            {{rating}}
+          <ion-select-option *ngFor="let rating of [1, 2, 3, 4, 5]" [value]="rating.toString()">
+            {{ rating }}
           </ion-select-option>
         </ion-select>
       </ion-item>

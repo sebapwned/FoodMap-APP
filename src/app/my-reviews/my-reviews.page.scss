@@ -1,0 +1,79 @@
+/* Fondo de la página */
+.profile-background {
+    background: linear-gradient(to bottom, #f27874, #e09f8f); 
+    min-height: 100vh;
+    padding-bottom: 70px; /* Espacio para el footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Botón de retroceso */
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    --background: transparent;
+    color: black;
+  }
+  
+  /* Título centrado */
+  .main-title {
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    margin: 20px 0; /* Espaciado superior e inferior */
+  }
+  
+  /* Estilo para la tarjeta */
+    .pink-card {
+    background-color: #E26D5D; /* Color #E26D5D */
+    color: #ffffff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    border: 2px solid black; /* Borde negro */
+  }
+  
+  /* Centrar el título de la tarjeta */
+  .card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .centered-card-title {
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  /* Estilo para acordeones */
+  .accordion-custom {
+    --background: linear-gradient(to bottom, #f27874, #e09f8f); /* Mismo color que el fondo */
+    --color: #ffffff; /* Texto blanco */
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+  
+  /* Encabezado del acordeón */
+  .accordion-header {
+    --background: transparent; /* Fondo transparente */
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  /* Footer */
+  .footer-tab-bar {
+    --background: #E26D5D; 
+    --color-selected: #ffffff; /* Color del icono cuando está seleccionado */
+    --color: #000000; /* Color de los iconos cuando no están seleccionados */
+  }
+  
+  /* Fuente global */
+  * {
+    font-family: 'Fredoka One', sans-serif;
+  }

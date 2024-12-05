@@ -56,4 +56,18 @@ export class RestaurantUseCase {
       return { success: false, message: errorMessage };
     }
   }
+  async getRestaurantsByUid(uid: string): Promise<any[]> {
+    try {
+      console.log('Consultando Firestore con UID:', uid);
+      const snapshot = await this.firestore
+        .collection('restaurants', (ref) => ref.where('uid', '==', uid))
+        .valueChanges({ idField: 'id' })
+        .toPromise(); 
+      console.log('Datos obtenidos desde Firestore:', snapshot);
+      return snapshot || [];
+    } catch (error) {
+      console.error('Error obteniendo los restaurantes:', error);
+      return [];
+    }
+  }
 }
