@@ -1,22 +1,46 @@
 <ion-content [fullscreen]="true" class="map-content">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-  
   <div class="home-background">
     <ion-button class="back-button" (click)="goBack()">
       <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
     </ion-button>
-    <div id="map"></div>
-    <div class="ubic">
-      <div class="search-bar">
-        <input type="text" placeholder="Tu ubicación" />
-        <ion-icon name="search-outline"></ion-icon>
-      </div>
-      <div class="buttons">
-        <button>Precios</button>
-        <button>Ciudad</button>
-        <button>Comida</button>
-      </div>
-    </div>
+
+    <ion-card class="Rest-Group">
+      <ion-card-header>
+        <ion-card-title>Restaurantes Disponibles</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-accordion-group class="Group-acc">
+          <ion-accordion *ngFor="let restaurant of restaurants" [value]="restaurant.id">
+            <ion-item slot="header" class="restaurant-item">
+              <ion-thumbnail slot="start">
+                <img [src]="restaurant.userPhotoURL || 'assets/default-restaurant.png'" alt="{{ restaurant.nombreRestaurant }}" />
+              </ion-thumbnail>
+              <ion-label>
+                <h2>{{ restaurant.nombreRestaurant }}</h2>
+                <p><strong>Valoración:</strong> {{ restaurant.valoracion || 'N/A' }} / 5</p>
+              </ion-label>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              <p>
+                <strong>Dirección:</strong>
+                <a *ngIf="restaurant.direccion" [href]="'https://www.google.com/maps/search/?q=' + restaurant.direccion" target="_blank">
+                  {{ restaurant.direccion }}
+                </a>
+                <span *ngIf="!restaurant.direccion">No disponible</span>
+              </p>
+              <p><strong>Horario:</strong> {{ restaurant.horarioAtencion || 'No disponible' }}</p>
+              <p><strong>Tipo de Comida:</strong> {{ restaurant.tipoComida || 'No disponible' }}</p>
+              <p><strong>Reseña:</strong> {{ restaurant.resena || 'No disponible' }}</p>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
+      </ion-card-content>
+    </ion-card>
+    
+
+    <ng-template #noRestaurants>
+      <p class="no-restaurants">No hay restaurantes disponibles en este momento.</p>
+    </ng-template>
   </div>
 
   <ion-footer class="footer">
@@ -24,11 +48,9 @@
       <ion-tab-button tab="mapa" href="#">
         <ion-icon name="map-outline"></ion-icon>
       </ion-tab-button>
-
       <ion-tab-button tab="inicio" (click)="onHomeButtonPressed()">
         <ion-icon name="home-outline"></ion-icon>
       </ion-tab-button>
-
       <ion-tab-button tab="perfil" (click)="onProfileButtonPressed()">
         <ion-icon name="person-outline"></ion-icon>
       </ion-tab-button>
